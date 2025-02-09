@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.coolsupplies.javafx.controller.InventoryPageController">
+    <center>
+      <GridPane>
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+            <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane GridPane.columnIndex="1">
+               <children>
+                  <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 10;" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                              <Text layoutX="5.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt; Items in the List" />
+                              <ListView fx:id="listview" layoutX="20.0" layoutY="20.0" prefHeight="450.0" prefWidth="755.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+                <AnchorPane prefHeight="549.0" prefWidth="195.0">
+                    <children>
+                  <Pane layoutX="5.0" layoutY="5.0" prefHeight="600.0" prefWidth="359.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 10;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                              <VBox layoutX="14.0" layoutY="14.0" prefHeight="86.0" prefWidth="122.0">
+                                  <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&gt; Add Item:" wrappingWidth="118.61719512939453" />
+                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name:" />
+                                      <TextField fx:id="itemAdd" />
+                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
+                                      <TextField fx:id="Price" prefWidth="122.0" />
+                                    <Button layoutY="400.0" mnemonicParsing="false" onAction="#addItem" style="-fx-background-color: #0066b2; -fx-background-radius: 10;" text="Add Item" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin></Button>
+                                  </children>
+                              </VBox>
+                              <VBox layoutX="13.0" layoutY="352.0" prefHeight="49.0" prefWidth="124.0">
+                                  <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&gt; Delete an Item:" />
+                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name:" />
+                                      <TextField fx:id="itemDelete" />
+                                    <Button mnemonicParsing="false" onAction="#deleteItem" prefHeight="26.0" prefWidth="88.0" style="-fx-background-radius: 10; -fx-background-color: e32636;" text="Delete Item" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin></Button>
+                                  </children>
+                              </VBox>
+                              <VBox layoutX="14.0" layoutY="159.0" prefHeight="86.0" prefWidth="122.0">
+                                  <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&gt; Update Item:" wrappingWidth="118.61719512939453" />
+                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name:" />
+                                      <TextField fx:id="itemUpdate" />
+                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="New Name:" />
+                                      <TextField fx:id="newName" />
+                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="New Price:" wrappingWidth="80.09637451171875" />
+                                      <TextField fx:id="newPrice" />
+                                    <Button mnemonicParsing="false" onAction="#updateItem" prefHeight="26.0" prefWidth="88.0" style="-fx-background-radius: 10; -fx-background-color: #17B169;" text="Update Item" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin></Button>
+                                  </children>
+                              </VBox>
+                     </children>
+                  </Pane>
+                    </children>
+                </AnchorPane>
+         </children>
+      </GridPane>
+    </center>
+    <top>
+        <GridPane alignment="CENTER" prefHeight="30.0" prefWidth="600.0" style="-fx-background-color: #B1B1B1;" BorderPane.alignment="CENTER_RIGHT">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="130.0" minWidth="0.0" prefWidth="130.0" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="400.0" spacing="5.0" GridPane.columnIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#doSwitchToShowStudentsPage" text="Assign Students" />
+                  <Button fx:id="doSwitchToAdminPage" mnemonicParsing="false" onAction="#doSwitchToAdminPage" prefHeight="25.0" prefWidth="81.0" text="Home">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#doSwitchToOrderPage" prefHeight="25.0" prefWidth="77.0" text="Orders" />
+                  <Button mnemonicParsing="false" onAction="#doSwitchToBundlePage" prefHeight="25.0" prefWidth="63.0" text="Bundles">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#doSwitchToParentPage" styleClass="settings_button" stylesheets="@../resources/styles.css" text="Parent">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#doSwitchToGradePage" prefHeight="25.0" prefWidth="60.0" text="Grades" />
+                  <Button fx:id="settingsButton" mnemonicParsing="false" styleClass="settings_button" stylesheets="@../resources/styles.css" text="Settings">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#doLogout" text="Logout">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+                <Label prefHeight="28.0" prefWidth="211.0" text="&gt; Items List">
+                    <GridPane.margin>
+                        <Insets left="5.0" />
+                    </GridPane.margin>
+                    <padding>
+                        <Insets left="4.0" />
+                    </padding>
+                    <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </GridPane>
+    </top>
+</BorderPane>

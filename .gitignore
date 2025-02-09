@@ -1,0 +1,17 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+*/**/build
+
+bin
+
+.idea
+
+*/**/__pycache__
+
+**/*.class
+data.json
+.vscode/settings.json
+app.data
